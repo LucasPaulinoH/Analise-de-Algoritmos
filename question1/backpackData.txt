@@ -1,0 +1,5 @@
+capacity 20
+primeiro 0.1 1.50
+segundo 2 4.25
+terceiro 4.5 3.0
+quarto 5 7.40
