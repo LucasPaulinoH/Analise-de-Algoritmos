@@ -1,5 +1,5 @@
-capacity 20
-primeiro 0.1 1.50
-segundo 2 4.25
-terceiro 4.5 3.0
-quarto 5 7.40
+capacity 10
+item1 2 12
+item2 3 18
+item3 4 25
+item4 5 30

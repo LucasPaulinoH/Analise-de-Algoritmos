@@ -15,7 +15,7 @@ public class FileReader {
 
     public static ProblemData getProblemDataFromFile() {
         try {
-            File file = new File("backpackData.txt");
+            File file = new File("question1/backpackData.txt");
             Scanner scanner = new Scanner(file);
 
             ProblemData problemData = new ProblemData();
