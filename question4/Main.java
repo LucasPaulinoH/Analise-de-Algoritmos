@@ -15,27 +15,30 @@ public class Main {
 
         int quantityOfShufflesToSort = 0;
         do {
-            deck = getShuffledDeck(deck);
+            shuffleDeck(deck);
             quantityOfShufflesToSort++;
         } while(!isDeckSorted(deck));
 
         System.out.println(quantityOfShufflesToSort);
     }
 
-    private static int[] getShuffledDeck(int deck[]) {
-        int length = deck.length;
-        int halfLength = length/2;
+    private static void shuffleDeck(int deck[]) {
+        int halfLength = deck.length/2;
 
-        int shuffledDeck[] = new int[length];
-        for(int ind=0 ; ind<length ; ind++) {
-            int halfOfInd = (int) Math.ceil((float) ind/2);
-            int halfAdditional = ind % 2 == 0 ? halfLength : 0;
-            int originalDeckInd = ind + halfAdditional - halfOfInd;
+        int leftHalf[] = new int[halfLength];
+        int rightHalf[] = new int[halfLength];
 
-            shuffledDeck[ind] = deck[originalDeckInd];
+        for(int ind=0 ; ind<halfLength ; ind++) {
+            leftHalf[ind] = deck[ind];
+            rightHalf[ind] = deck[halfLength + ind];
         }
 
-        return shuffledDeck;
+        for(int ind=0 ; ind<halfLength ; ind++) {
+            int doubleOfIndex = ind * 2;
+
+            deck[doubleOfIndex] = rightHalf[ind];
+            deck[doubleOfIndex + 1] = leftHalf[ind];
+        }
     }
 
     private static boolean isDeckSorted(int deck[]) {
