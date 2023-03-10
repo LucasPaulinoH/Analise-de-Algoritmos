@@ -29,7 +29,6 @@ public class Main {
             }
 
             System.out.println("Optimal train swapping takes " + swaps + " swaps.");
-            
         }
     }
 }
