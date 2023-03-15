@@ -1,0 +1,8 @@
+Algoritmos gulosos sempre buscam a melhor opção para aquele dado momento. Logo, quando esse
+princípio é aplicado ao problema da mochila, ele busca os itens mais valiosos para
+solucioná-lo — no caso, aqueles itens com o melhor "custo-benefício" (Valor por quilo). No
+entanto, na mochila binária, não é possível utilizar frações de itens. O que impossibilita
+que os itens mais valorosos tenham todo o seu "benefício" aproveitado. Sendo assim, é bastante 
+provável que, após adicionar alguns dos melhores itens, não seja mais possível, por conta do
+espaço limitado na mochila, adicionar nenhum desses. Desse modo, restam apenas os itens menos 
+valorosos para serem colocados, o que dificilmente implicará em uma resposta satisfatória.
