@@ -1,5 +1,0 @@
-capacity 10
-item1 2 12
-item2 3 18
-item3 4 25
-item4 5 30
