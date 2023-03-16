@@ -24,6 +24,7 @@ public class Main {
         soldiersN = orderSoldiers(soldiersN);
         
         int battlesWin = 0;
+        
         for (int i = 0; i < quantitySoldiers; i++) {
             if(soldiersN[i] > soldiersQ[i]) {
                 battlesWin++;

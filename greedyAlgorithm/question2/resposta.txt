@@ -11,6 +11,6 @@ d(8) = 2       d(8) = 1       d(8) = 1
 sE1 = 16       sE2 = 16       sE3 = 14
 ======================================
 
-R = O próximo estadodo jogo a partir do 
+R = O próximo estado do jogo a partir do 
 estado E0 tem de ser E3, que tem a menor 
 soma das distâncias d de todas as peças.
