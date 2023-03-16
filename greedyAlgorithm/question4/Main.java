@@ -1,4 +1,4 @@
-package greedyAlgorithm.question4;
+package question4;
 
 import java.util.Scanner;
 
