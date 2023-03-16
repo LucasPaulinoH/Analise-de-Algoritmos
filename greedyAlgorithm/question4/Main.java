@@ -41,7 +41,7 @@ public class Main {
             boolean isLastIteration = ind + 1 == stonesQuantity;
 
             StoneSize size = getStoneSizeFromChar(iterationData.charAt(0));
-            int distanceFromLeft = iterationData.charAt(2) - '0';
+            int distanceFromLeft = Integer.valueOf(iterationData.substring(2));
 
             // Soma com a distância entre a pedra atual e anterior.
             currentJump += distanceFromLeft - previousDistanceFromLeft;
