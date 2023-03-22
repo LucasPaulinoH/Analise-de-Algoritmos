@@ -1,17 +1,9 @@
 package question3;
 
-
 import java.util.Scanner;
 
 public class Main {
   private static Scanner sc = new Scanner(System.in);
-
-  private static void printArray(char[] array) {
-    for (int i = 0; i < array.length; i++) {
-      System.out.print(array[i]);
-    }
-    System.out.println();
-  }
 
   private static void swapStones(char[] array, int first, int second) {
     char aux = array[first];
