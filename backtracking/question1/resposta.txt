@@ -1,0 +1,6 @@
+  A Busca Exaustiva enumera todos os possíveis candidatos e verifica se cada candidato
+é a solução do problema, gerando uma complexidade muitas vezes exponencial ou fatorial.
+  Já no Backtracking é feita a construição de soluções parciais, explorando-as recursi-
+vamente e, em seguida, eliminando as soluções inválidas. Esta característica reduz sig-
+nificativamente o número de tentativas necessárias para encontrar uma solução válida, 
+sendo, em muitos casos mais eficiente e mais rápido que a Busca Exaustiva.
