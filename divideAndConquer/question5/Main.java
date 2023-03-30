@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    private static boolean deckIsSorted = false;
 
     public static void main(String args[]) {
         int quantityOfCards = scanner.nextInt();
@@ -16,38 +15,40 @@ public class Main {
 
         int quantityOfShufflesToSort = 0;
         do {
-            deck = shuffleDeck(deck);
+            shuffleDeck(deck);
             quantityOfShufflesToSort++;
-        } while(!deckIsSorted);
+        } while(deck[0] != 1);
 
         System.out.println(quantityOfShufflesToSort);
     }
 
-    private static int[] shuffleDeck(int deck[]) {
-        int shuffledDeck[] = new int[deck.length];
-
-        shuffleDeck(deck, shuffledDeck, 0, deck.length - 1);
-        return shuffledDeck;
+    private static void shuffleDeck(int deck[]) {
+        int length = deck.length;
+        shuffleDeck(deck, new int[length], 0, length - 1);
     }
 
     private static void shuffleDeck(
         int deck[], int shuffledDeck[],
         int initialIndex, int finalIndex
     ) {
-        if(initialIndex == finalIndex) {
-            int originalIndex = initialIndex +
-                (initialIndex % 2 == 0 ? deck.length/2 : 0);
-            originalIndex -= Math.ceil((float) initialIndex / 2);
+        int length = deck.length;
+        boolean isFirstIteration = initialIndex == 0 &&
+            finalIndex == length - 1;
+        
+        if(isFirstIteration) {
+            int middleIndex = (initialIndex + finalIndex)/2;
+            shuffleDeck(deck, shuffledDeck, initialIndex, middleIndex);
+            shuffleDeck(deck, shuffledDeck, middleIndex+1, finalIndex);
 
-            int originalDeckValue = deck[originalIndex];
-            shuffledDeck[initialIndex] = originalDeckValue;
-
-            deckIsSorted = originalDeckValue == initialIndex + 1;
+            for(int ind=0 ; ind < length ; ind++) {
+                deck[ind] = shuffledDeck[ind];
+            }
             return;
         }
 
-        int middleIndex = (initialIndex + finalIndex)/2;
-        shuffleDeck(deck, shuffledDeck, initialIndex, middleIndex);
-        shuffleDeck(deck, shuffledDeck, middleIndex+1, finalIndex);
+        int leftHalfAdditional = initialIndex == 0 ? 1 : 0;
+        for(int ind=0 ; ind < length/2 ; ind++) {
+            shuffledDeck[ind*2 + leftHalfAdditional] = deck[initialIndex + ind];
+        }
     }
 }
