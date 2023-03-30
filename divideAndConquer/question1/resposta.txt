@@ -1,0 +1,10 @@
+a) Sim. Para encontrar o valor máximo do vetor em questão, o algoritmo 
+   divide sua busca em duas partes iguais, buscando o valor máximo em 
+   cada uma delas de maneira recursiva, por fim compara os máximos de 
+   cada parte para achar o máximo global. 
+
+b) O número de comparações é no máximo 2n, pois a cada chamada recursiva
+   o algoritmo realiza uma comparação entre os elementos de índice p e q.
+   Como o tamanho do subconjunto é dividido pela metade a cada chamada re
+   cursiva, o número de chamadas é no máximo log 2(n). Portanto, a comple
+   xidade assintótica do algoritmo é 2n.
