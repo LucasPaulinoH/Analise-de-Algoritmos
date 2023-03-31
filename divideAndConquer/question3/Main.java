@@ -7,7 +7,13 @@ public class Main {
     
     public static void main(String args[]) {
         int inputArray[] = getInputArray();
-
+        // 6
+        // -2
+        // 11
+        // -4
+        // 13
+        // -5
+        // -2
         int maxSum[] = getMaxSum(inputArray);
         System.out.println("i = " + maxSum[0] + " j = " + maxSum[1] + " Max = " + maxSum[2]);
     }
@@ -56,8 +62,6 @@ public class Main {
                 maxSum[2] = subarraySum2[2];
             }
         }
-        
-        
 
         return maxSum; 
     }
