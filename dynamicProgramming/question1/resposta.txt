@@ -1,0 +1,21 @@
+Sim, é viável pois este é um claro problema de otimização, e
+é possível dividi-lo em subproblemas dependentes entre si. Os
+subproblemas podem ser determinados pela seguinte lógica:
+buscar o valor máximo que cada posição do tabuleiro poderia
+ter. Essa busca pode ser feita considerando os valores nas
+posições acima e à esquerda da posição que será analisada
+(que seriam as posições anteriores a esta), a partir desses
+dados, soma-se o  maior valor de posição anterior ao valor da
+atual (Se o maior valor for negativo, não efetua nenhuma
+soma, pois, nesse caso, o maior resultado seria o valor da
+própria posição atual). Para seguir esse raciocínio, primeiro
+calcula-se o valor da posição (0,0), já que esta não possui
+antecedentes, então são calculados todos os valores da
+primeira linha e da primeira coluna. Após isso, pode-se
+calcular os valores das posições remanescentes da
+tabela (que já tenham tido antecessores calculados), com isso,
+ao final, para obter o valor do melhor jogo, basta verificar
+qual o maior valor presente em meio aos da última linha e
+última coluna. Todo esse processo pode utilizar uma matriz
+como estrutura auxiliar, com o intuito de armazenar os
+resultados dos posições anteriores e calcular as novas.
