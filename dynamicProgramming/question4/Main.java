@@ -1,6 +1,5 @@
 package dynamicProgramming.question4;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -11,20 +10,20 @@ public class Main {
         final int sizeOfProducedPipe = scanner.nextInt();
 
         int maxSolution = 0;
-        HashMap<Integer, Integer> previousSolutions = new HashMap<>();
+        int[] maxValuesForEachLength = new int[sizeOfProducedPipe + 1];
 
         for(int ind=0 ; ind<quantityOfPipeSizes ; ind++) {
             int length = scanner.nextInt();
             int value = scanner.nextInt();
 
             for(int nextLength = length; nextLength <= sizeOfProducedPipe; nextLength++) {
-                int remainingLengthSolution = previousSolutions.getOrDefault(nextLength - length, 0);
+                int remainingLengthSolution = maxValuesForEachLength[nextLength - length];
                 if(remainingLengthSolution == 0 && nextLength > length) continue;
 
                 int newSolution = remainingLengthSolution + value;
-                int currentSolution = previousSolutions.getOrDefault(nextLength, 0);
+                int currentSolution = maxValuesForEachLength[nextLength];
 
-                previousSolutions.put(nextLength, Math.max(newSolution, currentSolution));
+                maxValuesForEachLength[nextLength] = Math.max(newSolution, currentSolution);
                 maxSolution = Math.max(maxSolution, newSolution);
             }
         }
