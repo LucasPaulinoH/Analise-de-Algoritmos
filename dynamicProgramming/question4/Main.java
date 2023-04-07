@@ -1,5 +1,6 @@
 package dynamicProgramming.question4;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -37,17 +38,18 @@ public class Main {
         }
         
         HashMap<String, PipeData> previousSolutions = orderedPipes;
+        Collection<PipeData> orderedPipesValues = orderedPipes.values();
         do {
             HashMap<String, PipeData> currentSolutions = new HashMap<>(
                 previousSolutions.size()
             );
+            Collection<PipeData> previousSolutionsValues = previousSolutions.values();
 
-            for(String orderedPipeKey : orderedPipes.keySet()) {
-                int pipeValue = orderedPipes.get(orderedPipeKey).value;
-                int pipeLength = orderedPipes.get(orderedPipeKey).length;
+            for(PipeData orderedPipe : orderedPipesValues) {
+                int pipeValue = orderedPipe.value;
+                int pipeLength = orderedPipe.length;
 
-                for(String previousSolutionKey : previousSolutions.keySet()) {
-                    PipeData previousSolution = previousSolutions.get(previousSolutionKey);
+                for(PipeData previousSolution : previousSolutionsValues) {
                     int solutionLength = previousSolution.length + pipeLength;
                     if(solutionLength > sizeOfProducedPipe) continue;
                     
