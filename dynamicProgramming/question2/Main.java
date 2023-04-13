@@ -14,7 +14,7 @@ public class Main {
     for (int i = 0; i < array.length; i++) {
       for (int j = s; j >= array[i]; j--) {
         if (verificationArray[j - array[i]] == true)
-          verificationArray[j] = true;
+          verificationArray[j] = true; // soma pode ser obtida usando array[i] e seus anteriores
       }
     }
     return verificationArray[s];
